@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.MichasC</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.4</version>
     <modules>
         <module>pet-clinic-data</module>
         <module>pet-clinic-web</module>
@@ -45,6 +45,7 @@
     <scm>
         <developerConnection>scm:git:git@github.com:MichasC/Pet-Clinic.git</developerConnection>
 
+    <tag>pet-clinic-0.0.4</tag>
   </scm>
 
 </project>
