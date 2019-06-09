@@ -4,8 +4,6 @@ import com.michasc.petclinic.model.Owner;
 import com.michasc.petclinic.model.Vet;
 import com.michasc.petclinic.services.OwnerService;
 import com.michasc.petclinic.services.VetService;
-import com.michasc.petclinic.services.map.OwnerServiceMap;
-import com.michasc.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,11 +15,10 @@ public class DataLoader implements CommandLineRunner {
 
 
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -39,7 +36,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        System.out.println("Loades Owners ...");
+        System.out.println("Loaded Owners ...");
         Vet vet1 = new Vet();
         vet1.setId(1L);
         vet1.setFirstName("Maks");
@@ -54,7 +51,7 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loades Vets ...");
+        System.out.println("Loaded Vets ...");
 
     }
 }
